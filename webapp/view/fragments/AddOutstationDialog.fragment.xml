@@ -1,0 +1,87 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+
+    <Dialog
+        id="addOutstationDialog"
+        title="Add Out of Station Record"
+        contentWidth="32rem"
+        resizable="true"
+        draggable="true">
+
+        <content>
+            <f:SimpleForm
+                id="addOutstationForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false">
+
+                <f:content>
+                    <Label id="lblDependantName" text="Dependant's Name" required="true" design="Bold"/>
+                    <Input id="inpDependantName" placeholder="Enter dependant's full name" />
+
+                    <Label id="lblRelation" text="Relation" required="true"  design="Bold"/>
+                    <Select id="selRelation" width="100%">
+                        <core:Item id="relSelf" key="Self" text="Self" />
+                        <core:Item id="relSpouse" key="Spouse" text="Spouse" />
+                        <core:Item id="relSon" key="Son" text="Son" />
+                        <core:Item id="relDaughter" key="Daughter" text="Daughter" />
+                        <core:Item id="relFather" key="Father" text="Father" />
+                        <core:Item id="relMother" key="Mother" text="Mother" />
+                    </Select>
+
+                    <Label id="lblPlace" text="Place" required="true"  design="Bold"/>
+                    <Input id="inpPlace" placeholder="Enter city or hospital location" />
+
+                    <Label id="lblFromDate" text="From Date" required="true"  design="Bold"/>
+                    <DatePicker
+                        id="dpFromDate"
+                        valueFormat="yyyy-MM-dd"
+                        displayFormat="dd MMM yyyy"
+                        placeholder="Select start date" />
+
+                    <Label id="lblToDate" text="To Date" required="true"  design="Bold"/>
+                    <DatePicker
+                        id="dpToDate"
+                        valueFormat="yyyy-MM-dd"
+                        displayFormat="dd MMM yyyy"
+                        placeholder="Select end date" />
+
+                    <Label id="lblPurposeOfVisit" text="Purpose of Visit" required="true"  design="Bold"/>
+                    <TextArea
+                        id="txtPurposeOfVisit"
+                        rows="3"
+                        placeholder="Briefly describe the medical purpose" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button
+                id="btnSaveOutstation"
+                text="Submit"
+                type="Emphasized"
+                press=".onSaveOutstation" />
+        </beginButton>
+        <endButton>
+            <Button
+                id="btnCancelOutstation"
+                text="Cancel"
+                press=".onCancelOutstation" />
+        </endButton>
+
+    </Dialog>
+</core:FragmentDefinition>

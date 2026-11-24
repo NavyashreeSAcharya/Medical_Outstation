@@ -1,0 +1,221 @@
+<mvc:View
+    controllerName="outstation.medicaloutstation.controller.outstation"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <ObjectPageLayout
+        id="idclaimsObjectPage"
+        useIconTabBar="true"
+        upperCaseAnchorBar="false"
+        showTitleInHeaderContent="true">
+
+        <!-- Page Header Title -->
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle id="idclaimsHeaderTitle">
+    <heading>
+        <m:HBox id="idclaimsHeadingBox" alignItems="Center">
+            <m:Image
+                id="idclaimsHeadingIcon"
+                src="./images/MrplLogo.png"
+                width="4rem"
+                height="4rem"
+                alt="Mrpl icon"
+                class="sapUiSmallMarginEnd" />
+            <m:Title
+                id="idclaimsPageTitle"
+                text="Out of Station"
+                level="H1"
+                titleStyle="H1" />
+        </m:HBox>
+    </heading>
+</ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+        <!-- Anchor Tab Bar Sections (useIconTabBar="true" shows ONLY one section at a time) -->
+        <sections>
+
+            <!-- Tab 1: Employee Claims -->
+            <ObjectPageSection
+                id="idempClaimsSection"
+                titleUppercase="false"
+                title="Employee">
+                <subSections>
+                    <ObjectPageSubSection
+                        id="idempClaimsSubSection"
+                        title="My Records">
+                        <blocks>
+                            <m:Table
+                                id="idoutstationClaimsTable"
+                                inset="false"
+                                growing="true"
+                                growingThreshold="25"
+                                noDataText="No out of station Records found."
+                                items="{empModel>/allOutstationRecords}">
+                                <m:headerToolbar>
+                                    <m:OverflowToolbar id="idempClaimsToolbar">
+                                        <m:content>
+                                            <m:Title id="idempTableTitle" text="My Out of Station Records" level="H2" />
+                                            <m:ToolbarSpacer id="idempToolbarSpacer" />
+                                            <m:Button
+                                                id="idbtnAddOutstation"
+                                                text="Add Out of Station Record"
+                                                type="Emphasized"
+                                                icon="sap-icon://add"
+                                                press=".OnAddOutStation" />
+                                        </m:content>
+                                    </m:OverflowToolbar>
+                                </m:headerToolbar>
+
+                                <m:columns>
+                                    <m:Column id="idempColDependantName">
+                                        <m:Text id="idempHdrDependantName" text="Dependant's Name" />
+                                    </m:Column>
+                                    <m:Column id="ididempColRelation" minScreenWidth="Tablet" demandPopin="true">
+                                        <m:Text id="idempHdrRelation" text="Relation" />
+                                    </m:Column>
+                                    <m:Column id="idempColPlace">
+                                        <m:Text id="idempHdrPlace" text="Place" />
+                                    </m:Column>
+                                    <m:Column id="idempColFromDate" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                        <m:Text id="idempHdrFromDate" text="From Date" />
+                                    </m:Column>
+                                    <m:Column id="idempColToDate" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                        <m:Text id="idempHdrToDate" text="To Date" />
+                                    </m:Column>
+                                    <m:Column id="idempColPurposeOfVisit" minScreenWidth="Desktop" demandPopin="true">
+                                        <m:Text id="idempHdrPurposeOfVisit" text="Purpose of Visit" />
+                                    </m:Column>
+                                </m:columns>
+
+                                <m:items>
+                                    <m:ColumnListItem id="idempClaimRow" vAlign="Middle">
+                                        <m:cells>
+                                            <m:Text id="idempCellDependantName" text="{empModel>dependantName}" />
+                                            <m:Text id="idempCellRelation" text="{empModel>relation}" />
+                                            <m:Text id="idempCellPlace" text="{empModel>place}" />
+                                            <m:Text id="idempCellFromDate" text="{
+        path: 'empModel>fromDate',
+        type: 'sap.ui.model.type.Date',
+        formatOptions: {
+            source: {
+                pattern: 'yyyy-MM-dd'
+            },
+            pattern: 'dd-MM-yyyy'
+        }
+    }" />
+                                            <m:Text id="idempCellToDate" text="{
+        path: 'empModel>toDate',
+        type: 'sap.ui.model.type.Date',
+        formatOptions: {
+            source: {
+                pattern: 'yyyy-MM-dd'
+            },
+            pattern: 'dd-MM-yyyy'
+        }
+    }" />
+                                            <m:Text id="idempCellPurposeOfVisit" text="{empModel>purposeOfVisit}" maxLines="2" />
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <!-- Tab 2: HR Claims (Hidden while on Tab 1 because useIconTabBar="true") -->
+            <ObjectPageSection
+                id="idhrClaimsSection"
+                titleUppercase="false"
+                title="HR">
+                <subSections>
+                    <ObjectPageSubSection
+                        id="idhrClaimsSubSection"
+                        title="All Employee Records">
+                        <blocks>
+                            <m:Table
+                                id="idhrOutstationClaimsTable"
+                                inset="false"
+                                growing="true"
+                                growingThreshold="25"
+                                noDataText="No out of station Records found."
+                                 items="{empModel>/allOutstationRecords}">
+                                <m:headerToolbar>
+                                    <m:OverflowToolbar id="idhrClaimsToolbar">
+                                        <m:content>
+                                            <m:Title id="idhrTableTitle" text="All Employees Out of Station Records" level="H2" />
+                                            <m:ToolbarSpacer id="idhrToolbarSpacer" />
+                                            <m:Button
+                                                id="idbtnHrAddOutstation"
+                                                text="Add Out of Station Record"
+                                                type="Emphasized"
+                                                icon="sap-icon://add"
+                                                press=".OnAddOutStation" />
+                                        </m:content>
+                                    </m:OverflowToolbar>
+                                </m:headerToolbar>
+
+                                <m:columns>
+                                    
+                                    <m:Column id="idhrColDependantName">
+                                        <m:Text id="idhrHdrDependantName" text="Dependant's Name" />
+                                    </m:Column>
+                                    <m:Column id="idhrColRelation" minScreenWidth="Tablet" demandPopin="true">
+                                        <m:Text id="idhrHdrRelation" text="Relation" />
+                                    </m:Column>
+                                    <m:Column id="idhrColPlace">
+                                        <m:Text id="idhrHdrPlace" text="Place" />
+                                    </m:Column>
+                                    <m:Column id="idhrColFromDate" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                        <m:Text id="idhrHdrFromDate" text="From Date" />
+                                    </m:Column>
+                                    <m:Column id="idhrColToDate" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                                        <m:Text id="idhrHdrToDate" text="To Date" />
+                                    </m:Column>
+                                    <m:Column id="idhrColPurposeOfVisit" minScreenWidth="Desktop" demandPopin="true">
+                                        <m:Text id="idhrHdrPurposeOfVisit" text="Purpose of Visit" />
+                                    </m:Column>
+                                </m:columns>
+
+                                <m:items>
+                                     <m:ColumnListItem id="idhrClaimRow" vAlign="Middle">
+                                        <m:cells>
+                                            <m:Text id="idhrCellDependantName" text="{empModel>dependantName}" />
+                                            <m:Text id="idhrCellRelation" text="{empModel>relation}" />
+                                            <m:Text id="idhrCellPlace" text="{empModel>place}" />
+                                            <m:Text id="idhrCellFromDate" text="{
+        path: 'empModel>fromDate',
+        type: 'sap.ui.model.type.Date',
+        formatOptions: {
+            source: {
+                pattern: 'yyyy-MM-dd'
+            },
+            pattern: 'dd-MM-yyyy'
+        }
+    }"/>
+                                            <m:Text id="idhrCellToDate" text="{
+        path: 'empModel>toDate',
+        type: 'sap.ui.model.type.Date',
+        formatOptions: {
+            source: {
+                pattern: 'yyyy-MM-dd'
+            },
+            pattern: 'dd-MM-yyyy'
+        }
+    }" />
+                                            <m:Text id="idhrCellPurposeOfVisit" text="{empModel>purposeOfVisit}" maxLines="2" />
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+        </sections>
+
+    </ObjectPageLayout>
+</mvc:View>

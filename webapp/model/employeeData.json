@@ -1,0 +1,220 @@
+{
+  "Employees": [
+    {
+      "EmployeeId": "EMP-1001",
+      "name": "Karthik Nair",
+      "familyDetails": [
+        {
+          "familyMemberName": "Meera Nair",
+          "age": 34,
+          "relation": "Spouse",
+          "dateOfBirth": "1992-04-18"
+        },
+        {
+          "familyMemberName": "Aarav Nair",
+          "age": 8,
+          "relation": "Son",
+          "dateOfBirth": "2018-09-10"
+        },
+        {
+          "familyMemberName": "Suresh Nair",
+          "age": 66,
+          "relation": "Father",
+          "dateOfBirth": "1960-02-14"
+        }
+      ],
+      "outstation": [
+        {
+          "dependantName": "Meera Nair",
+          "relation": "Spouse",
+          "place": "Bengaluru",
+          "fromDate": "2026-10-05",
+          "toDate": "2026-10-08",
+          "purposeOfVisit": "Specialist Medical Consultation"
+        },
+        {
+          "dependantName": "Suresh Nair",
+          "relation": "Father",
+          "place": "Kochi",
+          "fromDate": "2026-11-12",
+          "toDate": "2026-11-15",
+          "purposeOfVisit": "Cardiac Checkup"
+        }
+      ]
+    },
+    {
+      "EmployeeId": "EMP-1002",
+      "name": "Divya Shetty",
+      "familyDetails": [
+        {
+          "familyMemberName": "Prashanth Shetty",
+          "age": 37,
+          "relation": "Spouse",
+          "dateOfBirth": "1989-07-22"
+        },
+        {
+          "familyMemberName": "Ananya Shetty",
+          "age": 10,
+          "relation": "Daughter",
+          "dateOfBirth": "2016-05-03"
+        },
+        {
+          "familyMemberName": "Latha Shetty",
+          "age": 61,
+          "relation": "Mother",
+          "dateOfBirth": "1965-11-19"
+        }
+      ],
+      "outstation": [
+        {
+          "dependantName": "Latha Shetty",
+          "relation": "Mother",
+          "place": "Manipal",
+          "fromDate": "2026-09-14",
+          "toDate": "2026-09-17",
+          "purposeOfVisit": "Orthopaedic Treatment"
+        },
+        {
+          "dependantName": "Ananya Shetty",
+          "relation": "Daughter",
+          "place": "Mangaluru",
+          "fromDate": "2026-10-20",
+          "toDate": "2026-10-22",
+          "purposeOfVisit": "Paediatric Dental Surgery"
+        }
+      ]
+    },
+    {
+      "EmployeeId": "EMP-1003",
+      "name": "Rohan Kulkarni",
+      "familyDetails": [
+        {
+          "familyMemberName": "Sneha Kulkarni",
+          "age": 32,
+          "relation": "Spouse",
+          "dateOfBirth": "1994-01-30"
+        },
+        {
+          "familyMemberName": "Vihaan Kulkarni",
+          "age": 5,
+          "relation": "Son",
+          "dateOfBirth": "2021-08-12"
+        },
+        {
+          "familyMemberName": "Madhav Kulkarni",
+          "age": 68,
+          "relation": "Father",
+          "dateOfBirth": "1958-03-27"
+        }
+      ],
+      "outstation": [
+        {
+          "dependantName": "Madhav Kulkarni",
+          "relation": "Father",
+          "place": "Pune",
+          "fromDate": "2026-08-18",
+          "toDate": "2026-08-23",
+          "purposeOfVisit": "Eye Cataract Operation"
+        },
+        {
+          "dependantName": "Sneha Kulkarni",
+          "relation": "Spouse",
+          "place": "Mumbai",
+          "fromDate": "2026-11-01",
+          "toDate": "2026-11-04",
+          "purposeOfVisit": "Diagnostic Tests"
+        }
+      ]
+    },
+    {
+      "EmployeeId": "EMP-1004",
+      "name": "Priya Subramanian",
+      "familyDetails": [
+        {
+          "familyMemberName": "Aravind Subramanian",
+          "age": 39,
+          "relation": "Spouse",
+          "dateOfBirth": "1987-12-09"
+        },
+        {
+          "familyMemberName": "Diya Subramanian",
+          "age": 12,
+          "relation": "Daughter",
+          "dateOfBirth": "2014-06-25"
+        },
+        {
+          "familyMemberName": "Kamala Subramanian",
+          "age": 64,
+          "relation": "Mother",
+          "dateOfBirth": "1962-10-04"
+        }
+      ],
+      "outstation": [
+        {
+          "dependantName": "Kamala Subramanian",
+          "relation": "Mother",
+          "place": "Chennai",
+          "fromDate": "2026-09-02",
+          "toDate": "2026-09-06",
+          "purposeOfVisit": "Physiotherapy and Follow-up"
+        },
+        {
+          "dependantName": "Diya Subramanian",
+          "relation": "Daughter",
+          "place": "Coimbatore",
+          "fromDate": "2026-10-28",
+          "toDate": "2026-10-30",
+          "purposeOfVisit": "ENT Specialist Consultation"
+        }
+      ]
+    },
+    {
+      "EmployeeId": "EMP-1005",
+      "name": "Siddharth Verma",
+      "familyDetails": [
+        {
+          "familyMemberName": "Neha Verma",
+          "age": 31,
+          "relation": "Spouse",
+          "dateOfBirth": "1995-03-15"
+        },
+        {
+          "familyMemberName": "Kabir Verma",
+          "age": 4,
+          "relation": "Son",
+          "dateOfBirth": "2022-07-08"
+        },
+        {
+          "familyMemberName": "Rajesh Verma",
+          "age": 65,
+          "relation": "Father",
+          "dateOfBirth": "1961-09-11"
+        },
+        {
+          "familyMemberName": "Sunita Verma",
+          "age": 60,
+          "relation": "Mother",
+          "dateOfBirth": "1966-04-29"
+        }
+      ],
+      "outstation": [
+        {
+          "dependantName": "Rajesh Verma",
+          "relation": "Father",
+          "place": "New Delhi",
+          "fromDate": "2026-08-10",
+          "toDate": "2026-08-14",
+          "purposeOfVisit": "Neurology Referral"
+        },
+        {
+          "dependantName": "Sunita Verma",
+          "relation": "Mother",
+          "place": "Hyderabad",
+          "fromDate": "2026-11-16",
+          "toDate": "2026-11-19",
+          "purposeOfVisit": "Post-Surgery Review"
+        }
+      ]
+    }
+  ]
+}

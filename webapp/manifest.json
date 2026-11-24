@@ -1,0 +1,120 @@
+{
+  "_version": "1.90.0",
+  "sap.app": {
+    "id": "outstation.medicaloutstation",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.34.0",
+      "toolsId": "37d648ee-6531-45eb-83e3-1f0a644b56f7"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "outstation-display": {
+          "semanticObject": "outstation",
+          "action": "display",
+          "title": "{{outstation-display.flpTitle}}",
+          "subTitle": "{{outstation-display.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.154.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "outstation.medicaloutstation.i18n.i18n"
+        }
+      },
+      "empModel": {
+    "type": "sap.ui.model.json.JSONModel",
+    "uri": "model/employeeData.json"
+  }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "outstation.medicaloutstation.view",
+        "async": true,
+        "viewPath": "outstation.medicaloutstation.view"
+      },
+      "routes": [
+        {
+          "name": "Routeoutstation",
+          "pattern": ":?query:",
+          "target": [
+            "Targetoutstation"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetoutstation": {
+          "id": "outstation",
+          "name": "outstation"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "outstation.medicaloutstation.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "outstationmedicaloutstation"
+  }
+}
